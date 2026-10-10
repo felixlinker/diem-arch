@@ -19,22 +19,18 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Digital Emblems Architecture Document"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-linker-diem-arch
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 consensus: true
 v: 3
 area: AREA
-workgroup: WG Working Group
+workgroup: diem
 keyword:
- - next generation
- - unicorn
- - AI-native
 venue:
   group: WG
   type: Working Group
@@ -45,9 +41,8 @@ venue:
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: your.email@example.com
+    fullname: Felix Linker
+    email: linkerfelix@gmail.com
 
 normative:
 
