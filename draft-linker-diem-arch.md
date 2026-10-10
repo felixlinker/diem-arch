@@ -8,16 +8,16 @@ number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: diem
+area: "Applications and Real-Time"
+workgroup: "Digital Emblems"
 keyword:
 venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
+  group: "Digital Emblems"
+  type: "Working Group"
+  mail: "diem@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/diem"
+  github: "felixlinker/diem-arch"
+  latest: "https://felixlinker.github.io/diem-arch/draft-linker-diem-arch.html"
 
 author:
  -
