@@ -82,7 +82,7 @@ Table of Contents
 
    The Digital Emblems (diem) WG works on the digitization of physical
    emblems as _digital emblems_. Emblems convey some information about a
-   subject that must be interpreted in context of some normative
+   subject that must be interpreted in the context of some normative
    framework, for example, a law, a treaty, a convention, a government
    agency's procedures, or a customary law.  One famous example of an
    emblem is that of the Red Cross, which conveys that its bearer serves
@@ -113,7 +113,7 @@ Table of Contents
    groups of use cases, outline their domain model and relevant parties,
    and sketch which drafts will comprise a profile.  This document is
    meant to evolve in parallel to the referenced protocol documents.  It
-   serves as an overview of the DIEM WG work.
+   serves as an overview of the diem WG work.
 
 2.  Conventions and Definitions
 
@@ -147,7 +147,7 @@ Table of Contents
 
    Information is published in the DNS by the party controlling the
    asset with which information is associated.  Integrity of the data
-   can be provided straightforward by signing the relevant zones using
+   can be provided straightforwardly by signing the relevant zones using
    DNSSEC [RFC4033] [RFC4034] [RFC4035].
 
 3.2.  Profile 2: Protective Emblems
@@ -159,10 +159,10 @@ Table of Contents
    *  [I-D.linker-diem-adem-dns]
 
    The protective emblems use case provides digital means to convey the
-   protective emblems defined in Geneva Conventions, their Additional
-   Protocols, and the 1954 Hague Convention.  These emblems include the
-   Red Cross, Red Crystal, and Red Crescent for medical, humanitarian
-   infrastructure.
+   protective emblems defined in the Geneva Conventions, their
+   Additional Protocols, and the 1954 Hague Convention.  These emblems
+   include the Red Cross, Red Crystal, and Red Crescent for medical,
+   humanitarian infrastructure.
 
    In this profile, an emblem issuer can signal to a validator that the
    services associated with a domain name enjoy the specific protections
@@ -170,18 +170,18 @@ Table of Contents
    implies that they should not be disrupted.  To use the emblem on a
    domain name, this domain name must only be used for purposes that
    enjoy the specific protections under IHL.  We assume that the emblem
-   issuer controls the domain name, though, they may have outsourced its
+   issuer controls the domain name, though they may have outsourced its
    operation to a service provider.
 
-   The audience of such emblems are validators; all parties who would
-   generally disrupt digital services but respect services marked with
-   an emblem.  We can thus assume that validators obtain a service's
-   domain name out-of-band during the reconnaissance phase of their
-   operations.
+   The audience of such emblems consists of validators: all parties who
+   would generally disrupt digital services but respect services marked
+   with an emblem.  We can thus assume that validators obtain a
+   service's domain name out-of-band during the reconnaissance phase of
+   their operations.
 
    The use of the emblem requires authorization by a competent
-   authority, typically by a state.  How is authorization is obtained is
-   out-of-scope of this profile for now.
+   authority, typically by a state.  How authorization is obtained is
+   outside the scope of this profile for now.
 
 4.  Security Considerations
 
@@ -215,17 +215,18 @@ Table of Contents
               requirements-03>.
 
    [I-D.linker-diem-adem-core]
-              Linker, F., "ADEM Core Specification", Work in Progress,
-              Internet-Draft, draft-linker-diem-adem-core-01, 5 October
-              2026, <https://datatracker.ietf.org/doc/html/draft-linker-
-              diem-adem-core-01>.
+              Linker, F., "An Authentic Digital, Distinctive EMblem
+              (ADEM) - Message Format and Authorization Model", Work in
+              Progress, Internet-Draft, draft-linker-diem-adem-core-02,
+              17 October 2026, <https://datatracker.ietf.org/doc/html/
+              draft-linker-diem-adem-core-02>.
 
    [I-D.linker-diem-adem-dns]
-              Linker, F., "ADEM - Distribution and Discovery over DNS",
-              Work in Progress, Internet-Draft, draft-linker-diem-adem-
-              dns-01, 5 October 2026,
-              <https://datatracker.ietf.org/doc/html/draft-linker-diem-
-              adem-dns-01>.
+              Linker, F., "An Authentic Digital, Distinctive EMblem
+              (ADEM) - Distribution and Discovery over the DNS", Work in
+              Progress, Internet-Draft, draft-linker-diem-adem-dns-02,
+              17 October 2026, <https://datatracker.ietf.org/doc/html/
+              draft-linker-diem-adem-dns-02>.
 
    [I-D.woodcock-faltstrom-external-registry-rrtypes]
               Woodcock, B. and P. Fältström, "External-Registry DNS
