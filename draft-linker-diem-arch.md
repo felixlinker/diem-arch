@@ -40,7 +40,7 @@ TODO Abstract
 # Introduction {#intro}
 
 The Digital Emblems (diem) WG works on the digitization of physical emblems as *digital emblems*.
-Emblems convey some information about a subject that must be interpreted in context of some normative framework, for example, a law, a treaty, a convention, a government agency's procedures, or a customary law.
+Emblems convey some information about a subject that must be interpreted in the context of some normative framework, for example, a law, a treaty, a convention, a government agency's procedures, or a customary law.
 One famous example of an emblem is that of the Red Cross, which conveys that its bearer serves a medical purpose and thus enjoys specific protections under International Humanitarian Law (IHL).
 Digital emblems are systems and standards that convey the relevant information by digital means, e.g., by storing it in DNS resource records.
 
@@ -54,7 +54,7 @@ Thus, it seems to be the most sensible way forward to distinguish different prof
 
 In this document, we present these different emblem profiles and groups of use cases, outline their domain model and relevant parties, and sketch which drafts will comprise a profile.
 This document is meant to evolve in parallel to the referenced protocol documents.
-It serves as an overview of the DIEM WG work.
+It serves as an overview of the diem WG work.
 
 # Conventions and Definitions
 
@@ -78,7 +78,7 @@ Using this profile, the validator can query for different groups of codified inf
 How this information is processed then depends on the use case and application context.
 
 Information is published in the DNS by the party controlling the asset with which information is associated.
-Integrity of the data can be provided straightforward by signing the relevant zones using DNSSEC {{?RFC4033}} {{?RFC4034}} {{?RFC4035}}.
+Integrity of the data can be provided straightforwardly by signing the relevant zones using DNSSEC {{?RFC4033}} {{?RFC4034}} {{?RFC4035}}.
 
 ## Profile 2: Protective Emblems
 
@@ -87,18 +87,18 @@ This profile currently comprises the following drafts:
 - {{?I-D.linker-diem-adem-core}}
 - {{?I-D.linker-diem-adem-dns}}
 
-The protective emblems use case provides digital means to convey the protective emblems defined in Geneva Conventions, their Additional Protocols, and the 1954 Hague Convention.
+The protective emblems use case provides digital means to convey the protective emblems defined in the Geneva Conventions, their Additional Protocols, and the 1954 Hague Convention.
 These emblems include the Red Cross, Red Crystal, and Red Crescent for medical, humanitarian infrastructure.
 
 In this profile, an emblem issuer can signal to a validator that the services associated with a domain name enjoy the specific protections under International Humanitarian Law (IHL), which, for example, implies that they should not be disrupted.
 To use the emblem on a domain name, this domain name must only be used for purposes that enjoy the specific protections under IHL.
-We assume that the emblem issuer controls the domain name, though, they may have outsourced its operation to a service provider.
+We assume that the emblem issuer controls the domain name, though they may have outsourced its operation to a service provider.
 
-The audience of such emblems are validators; all parties who would generally disrupt digital services but respect services marked with an emblem.
+The audience of such emblems consists of validators: all parties who would generally disrupt digital services but respect services marked with an emblem.
 We can thus assume that validators obtain a service's domain name out-of-band during the reconnaissance phase of their operations.
 
 The use of the emblem requires authorization by a competent authority, typically by a state.
-How is authorization is obtained is out-of-scope of this profile for now.
+How authorization is obtained is outside the scope of this profile for now.
 
 # Security Considerations {#security}
 
