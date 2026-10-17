@@ -154,9 +154,9 @@ Table of Contents
 
    This profile currently comprises the following drafts:
 
-   *  [I-D.linker-diem-adem-core]
+   *  [I-D.linker-diem-adem-core-02]
 
-   *  [I-D.linker-diem-adem-dns]
+   *  [I-D.linker-diem-adem-dns-02]
 
    The protective emblems use case provides digital means to convey the
    protective emblems defined in the Geneva Conventions, their
@@ -214,14 +214,14 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-diem-
               requirements-03>.
 
-   [I-D.linker-diem-adem-core]
+   [I-D.linker-diem-adem-core-02]
               Linker, F., "An Authentic Digital, Distinctive EMblem
               (ADEM) - Message Format and Authorization Model", Work in
               Progress, Internet-Draft, draft-linker-diem-adem-core-02,
               17 October 2026, <https://datatracker.ietf.org/doc/html/
               draft-linker-diem-adem-core-02>.
 
-   [I-D.linker-diem-adem-dns]
+   [I-D.linker-diem-adem-dns-02]
               Linker, F., "An Authentic Digital, Distinctive EMblem
               (ADEM) - Distribution and Discovery over the DNS", Work in
               Progress, Internet-Draft, draft-linker-diem-adem-dns-02,
