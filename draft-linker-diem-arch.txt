@@ -2,14 +2,14 @@
 
 
 
-diem                                                           F. Linker
-Internet-Draft                                           10 October 2026
+Digital Emblems                                                F. Linker
+Internet-Draft                                           17 October 2026
 Intended status: Informational                                          
-Expires: 13 April 2027
+Expires: 20 April 2027
 
 
                  Digital Emblems Architecture Document
-                         draft-linker-diem-arch
+                     draft-linker-diem-arch-latest
 
 Abstract
 
@@ -20,15 +20,17 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-linker-diem/.
+   https://felixlinker.github.io/diem-arch/draft-linker-diem-arch.html.
+   Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-linker-diem-arch/.
 
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   Discussion of this document takes place on the Digital Emblems
+   Working Group mailing list (mailto:diem@ietf.org), which is archived
+   at https://mailarchive.ietf.org/arch/browse/diem.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/diem/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/felixlinker/diem-arch.
 
 Status of This Memo
 
@@ -45,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 April 2027.
+   This Internet-Draft will expire on 20 April 2027.
 
 Copyright Notice
 
@@ -65,15 +67,53 @@ Table of Contents
 
    1.  Introduction
    2.  Conventions and Definitions
-   3.  Security Considerations
-   4.  IANA Considerations
-   5.  Normative References
+   3.  Digital Emblem Profiles
+     3.1.  Profile 1: External Registry Emblems
+     3.2.  Profile 2: Protective Emblems
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
    Acknowledgments
    Author's Address
 
 1.  Introduction
 
-   TODO Introduction
+   The Digital Emblems (diem) WG works on the digitization of physical
+   emblems as _digital emblems_. Emblems convey some information about a
+   subject that must be interpreted in context of some normative
+   framework, for example, a law, a treaty, a convention, a government
+   agency's procedures, or a customary law.  One famous example of an
+   emblem is that of the Red Cross, which conveys that its bearer serves
+   a medical purpose and thus enjoys specific protections under
+   International Humanitarian Law (IHL).  Digital emblems are systems
+   and standards that convey the relevant information by digital means,
+   e.g., by storing it in DNS resource records.
+
+   Different use cases have been discussed at the diem WG, for example,
+   the labelling of goods in transport by reference to the World Customs
+   Organization's classification, conveying that a wetland is designated
+   as protected under the Convention on Wetlands of International
+   Importance, or the marking of digital services as enjoying specific
+   protections under IHL.  (For more details, see
+   [I-D.ietf-diem-requirements].)
+
+   Intuition suggests that one design ought to be able to address all
+   use cases, and many use cases share some requirements, e.g.,
+   authenticating an emblem's information.  Discussions on the various
+   use cases, though, have revealed that many use cases have conflicting
+   requirements or have different flavours of requirements that may upon
+   first glance appear to be the same.  Thus, it seems to be the most
+   sensible way forward to distinguish different profiles of Digital
+   Emblems, which can address different groups of use cases that share
+   relevant requirements.
+
+   In this document, we present these different emblem profiles and
+   groups of use cases, outline their domain model and relevant parties,
+   and sketch which drafts will comprise a profile.  This document is
+   meant to evolve in parallel to the referenced protocol documents.  It
+   serves as an overview of the DIEM WG work.
 
 2.  Conventions and Definitions
 
@@ -83,15 +123,77 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-3.  Security Considerations
+3.  Digital Emblem Profiles
+
+3.1.  Profile 1: External Registry Emblems
+
+   This profile currently comprises the following drafts:
+
+   *  [I-D.woodcock-faltstrom-external-registry-rrtypes]
+
+   In the external registry profile, emblems convey information that is
+   codified by an external registry.  For example, the United Nations
+   Economic Commission for Europe (UNECE) defines standardized means to
+   encode data, e.g., areas, time and dates, types of cargo, and much
+   more.  This profile provides means to associate such externally
+   codified information with domain names.
+
+   The domain model of this profile is the following.  A validator
+   learns about an asset's associated domain name out-of-band.  Using
+   this profile, the validator can query for different groups of
+   codified information by querying for relevant resource record types
+   associated with that domain name.  How this information is processed
+   then depends on the use case and application context.
+
+   Information is published in the DNS by the party controlling the
+   asset with which information is associated.  Integrity of the data
+   can be provided straightforward by signing the relevant zones using
+   DNSSEC [RFC4033] [RFC4034] [RFC4035].
+
+3.2.  Profile 2: Protective Emblems
+
+   This profile currently comprises the following drafts:
+
+   *  [I-D.linker-diem-adem-core]
+
+   *  [I-D.linker-diem-adem-dns]
+
+   The protective emblems use case provides digital means to convey the
+   protective emblems defined in Geneva Conventions, their Additional
+   Protocols, and the 1954 Hague Convention.  These emblems include the
+   Red Cross, Red Crystal, and Red Crescent for medical, humanitarian
+   infrastructure.
+
+   In this profile, an emblem issuer can signal to a validator that the
+   services associated with a domain name enjoy the specific protections
+   under International Humanitarian Law (IHL), which, for example,
+   implies that they should not be disrupted.  To use the emblem on a
+   domain name, this domain name must only be used for purposes that
+   enjoy the specific protections under IHL.  We assume that the emblem
+   issuer controls the domain name, though, they may have outsourced its
+   operation to a service provider.
+
+   The audience of such emblems are validators; all parties who would
+   generally disrupt digital services but respect services marked with
+   an emblem.  We can thus assume that validators obtain a service's
+   domain name out-of-band during the reconnaissance phase of their
+   operations.
+
+   The use of the emblem requires authorization by a competent
+   authority, typically by a state.  How is authorization is obtained is
+   out-of-scope of this profile for now.
+
+4.  Security Considerations
 
    TODO Security
 
-4.  IANA Considerations
+5.  IANA Considerations
 
    This document has no IANA actions.
 
-5.  Normative References
+6.  References
+
+6.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -101,6 +203,52 @@ Table of Contents
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+6.2.  Informative References
+
+   [I-D.ietf-diem-requirements]
+              Fainchtein, R. A., Linker, F., Rosenberg, A., Deccio, C.,
+              and A. Mankin, "Digital Emblems - Use Cases and
+              Requirements", Work in Progress, Internet-Draft, draft-
+              ietf-diem-requirements-03, 6 July 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-diem-
+              requirements-03>.
+
+   [I-D.linker-diem-adem-core]
+              Linker, F., "ADEM Core Specification", Work in Progress,
+              Internet-Draft, draft-linker-diem-adem-core-01, 5 October
+              2026, <https://datatracker.ietf.org/doc/html/draft-linker-
+              diem-adem-core-01>.
+
+   [I-D.linker-diem-adem-dns]
+              Linker, F., "ADEM - Distribution and Discovery over DNS",
+              Work in Progress, Internet-Draft, draft-linker-diem-adem-
+              dns-01, 5 October 2026,
+              <https://datatracker.ietf.org/doc/html/draft-linker-diem-
+              adem-dns-01>.
+
+   [I-D.woodcock-faltstrom-external-registry-rrtypes]
+              Woodcock, B. and P. Fältström, "External-Registry DNS
+              Resource Record Types: UNECE and ISO", Work in Progress,
+              Internet-Draft, draft-woodcock-faltstrom-external-
+              registry-rrtypes-01, 9 September 2026,
+              <https://datatracker.ietf.org/doc/html/draft-woodcock-
+              faltstrom-external-registry-rrtypes-01>.
+
+   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "DNS Security Introduction and Requirements",
+              RFC 4033, DOI 10.17487/RFC4033, March 2005,
+              <https://www.rfc-editor.org/rfc/rfc4033>.
+
+   [RFC4034]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "Resource Records for the DNS Security Extensions",
+              RFC 4034, DOI 10.17487/RFC4034, March 2005,
+              <https://www.rfc-editor.org/rfc/rfc4034>.
+
+   [RFC4035]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "Protocol Modifications for the DNS Security
+              Extensions", RFC 4035, DOI 10.17487/RFC4035, March 2005,
+              <https://www.rfc-editor.org/rfc/rfc4035>.
 
 Acknowledgments
 
