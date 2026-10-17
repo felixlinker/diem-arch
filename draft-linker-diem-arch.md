@@ -84,8 +84,8 @@ Integrity of the data can be provided straightforwardly by signing the relevant 
 
 This profile currently comprises the following drafts:
 
-- {{?I-D.linker-diem-adem-core}}
-- {{?I-D.linker-diem-adem-dns}}
+- {{?I-D.linker-diem-adem-core-02}}
+- {{?I-D.linker-diem-adem-dns-02}}
 
 The protective emblems use case provides digital means to convey the protective emblems defined in the Geneva Conventions, their Additional Protocols, and the 1954 Hague Convention.
 These emblems include the Red Cross, Red Crystal, and Red Crescent for medical, humanitarian infrastructure.
