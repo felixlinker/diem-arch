@@ -41,13 +41,13 @@ TODO Abstract
 
 The Digital Emblems (diem) WG works on the digitization of physical emblems as *digital emblems*.
 Emblems convey some information about a subject that must be interpreted in the context of some normative framework, for example, a law, a treaty, a convention, a government agency's procedures, or a customary law.
-One famous example of an emblem is that of the Red Cross, which conveys that its bearer serves a medical purpose and thus enjoys specific protections under International Humanitarian Law (IHL).
+One famous example of an emblem is that of the Red Cross, which conveys that its bearer, for example a hospital, serves a purpose enjoying specific protections under International Humanitarian Law (IHL).
 Digital emblems are systems and standards that convey the relevant information by digital means, e.g., by storing it in DNS resource records.
 
 Different use cases have been discussed at the diem WG, for example, the labelling of goods in transport by reference to the World Customs Organization's classification, conveying that a wetland is designated as protected under the Convention on Wetlands of International Importance, or the marking of digital services as enjoying specific protections under IHL.
 (For more details, see {{?I-D.ietf-diem-requirements}}.)
 
-Intuition suggests that one design ought to be able to address all use cases, and many use cases share some requirements, e.g., authenticating an emblem's information.
+Upon first glance, one design may be able to address all use cases, and many use cases share some requirements, e.g., authenticating an emblem's information.
 Discussions on the various use cases, though, have revealed that many use cases have conflicting requirements or have
 different flavours of requirements that may upon first glance appear to be the same.
 Thus, it seems to be the most sensible way forward to distinguish different profiles of Digital Emblems, which can address different groups of use cases that share relevant requirements.
